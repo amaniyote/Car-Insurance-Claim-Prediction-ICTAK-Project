@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Car Insurance Claim Prediction</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/stylenew.css') }}">
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Car Insurance Claim Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}" method="POST">
+    	<input type="number" name="Age" placeholder="Age" required="required" />
+      <input type="number" name="Income" placeholder="Income" required="required" />
+      <input type="number" name="Education" placeholder="Education" required="required" />
+      <input type="number" name="Occupation" placeholder="Occupation" required="required" />
+        <!--<input type="text" name="Gender" placeholder="Gender" required="required" />-->
+        <select name="Gender">
+          <option value="0">Male</option>
+          <option value="1">Female</option>
+          </select>
+        <input type="number" name="Claim Amount" placeholder="Claim Amount" required="required" />
+        <!--<input type="text" name="sm" placeholder="Smoker" required="required" />-->
+        
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+
+ </div>
+
+
+</body>
+</html>
